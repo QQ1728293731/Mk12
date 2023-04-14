@@ -22,7 +22,7 @@ public abstract class Initializer extends JFrame implements KeyListener, MouseLi
     //所有子类图形的统一getContentPane方法
     Container con = getContentPane();
     JMenu aboutJM = new JMenu("关于(G)");
-    String version = "水银第11代 0.11.28.20230406";
+    String version = "水银第12代 0.12.00.20230414";
     String username;
     String password;
     JDialog aboutJD = new JDialog();
@@ -40,7 +40,7 @@ public abstract class Initializer extends JFrame implements KeyListener, MouseLi
     StringBuilder passwordSB = new StringBuilder();
     JLabel revealPasswordJL = new JLabel(new ImageIcon(new ImageIcon("image\\login\\密码隐藏.png").getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
     JLabel revealPasswordPressedJL = new JLabel(new ImageIcon(new ImageIcon("image\\login\\密码显示.png").getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT)));
-    char[] chars = new char[]{'♫', '☭', '☣', '☢', '☯', '☮', '♡', 'λ', '∞','☺','☹','♩','♪','♬','☕',};
+    char[] chars = new char[]{'♫', '☭', '☣', '☢', '☯', '☮', '♡', 'λ', '∞','☺','☹','♩','♪','♬','☕'};
 
     {
         backJB.setBounds(0, 0, 50, 50);

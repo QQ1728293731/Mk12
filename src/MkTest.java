@@ -10,17 +10,45 @@
 //所有合并需要全部计算完之后才能展现给用户。
 //合并操作结束后要执行产生新元素的方法，这是一个独立方法。在空格中随机选取一个格子产生新元素，2或4，几率各占一半。
 //合并和产生操作结束后，判断游戏是否结束。
+//需要注意的是出现一个方向上有连续多个同样数字的情况。这个时候，只有方向尾端的两个数字会合并，其他的只会移动过去。
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class MkTest implements ActionListener {
-    public MkTest() {
+    //创建游戏主体：一个4*4二维数组
+    int[][] board = new int[4][4];
+    Random r = new Random();
 
+    public MkTest() {
+        spawn();
+        initContent();
     }
 
     public static void main(String[] args) {
+        new MkTest();
+    }
 
+    private void initContent() {
+        for (int[] ints : board) {
+            for (int i : ints) {
+                System.out.print(i + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    //生成新数字的方法：随机找一个元素，如果不是0则再循环一次；如果是0就在这里生成2或4（概率五五开）
+    private void spawn() {
+        while (true) {
+            int a = r.nextInt(4);
+            int b = r.nextInt(4);
+            if (board[a][b] == 0) {
+                board[a][b] = (r.nextInt(2) + 1) * 2;
+                return;
+            }
+        }
     }
 
     @Override

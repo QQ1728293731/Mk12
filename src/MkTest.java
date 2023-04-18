@@ -1,90 +1,30 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.io.IOException;
-
 //此类用于各种疑难理论测试，成功后可使用branch功能进行实际测试
-//现在正在测试：
-public class MkTest extends JFrame {
+//现在正在测试：2048的原理
+//游戏整体是一个4*4的二维数组，空余的格子用0表示
+//用户每一次执行某个方向的移动，就判断此方向上有哪些数字可以合并。
+//移动的时候，所有元素都会一直移动，直到来到边缘或者被元素挡住
+//当用户搞出2048，游戏就要提示玩家胜利。当然，用户可以继续玩。
+//创建一个方法，用来判断从某一个元素为起点，某一个方向上的下一个元素是否与自己一样。参数是起始元素和方向。如果发现一样的，那么就执行合并。
+//这个方法只判断一次，因此别的地方会有一个嵌套循环。某方向的边缘的元素无需判断，因此每一次只需要判断12次。
+//合并用一个独立的方法，参数是要合并的两个元素。合并后，该方向的下一个元素变为两倍，起始元素消失，后面的元素依次按方向移动一格
+//所有合并需要全部计算完之后才能展现给用户。
+//合并操作结束后要执行产生新元素的方法，这是一个独立方法。在空格中随机选取一个格子产生新元素，2或4，几率各占一半。
+//合并和产生操作结束后，判断游戏是否结束。
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class MkTest implements ActionListener {
     public MkTest() {
-        JFrame jFrame = new JFrame();
-        JLabel label = new JLabel();
-        jFrame.setSize(500, 500);
-        label.setText("This is a very long text that will not fit in the label.");
-        label.setFont(new Font("Arial", Font.PLAIN, 20));
-        JScrollPane scrollPane = new JScrollPane(label, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setPreferredSize(new Dimension(300, 100));
-        jFrame.getContentPane().add(scrollPane);
-//        pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
+
     }
 
-    public static void main(String[] args) throws IOException {
-        new MkTest();
-        Initializer i = new Initializer() {
-            @Override
-            void collectData() {
+    public static void main(String[] args) {
 
-            }
+    }
 
-            @Override
-            void initJFrame() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
-            }
-
-            @Override
-            void initMenuBar() {
-
-            }
-
-            @Override
-            void initContent() throws IOException {
-
-            }
-
-            @Override
-            public void keyTyped(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-
-            }
-
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-//        i.decrypt(new File("User\\QQ1728293731"),"1");
-//        i.encrypt(new File("Temp\\QQ1728293731"));
     }
 }

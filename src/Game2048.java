@@ -11,6 +11,8 @@ public class Game2048 {
     int score = 0;
     int step = 0;
     Random r = new Random();
+    //判断用户的指令是否有效，即数组是否真的发生了变化
+    private boolean changed;
 
     public Game2048() {
         changed = true;
@@ -30,8 +32,8 @@ public class Game2048 {
         for (int[] row : board) {
             for (int i : row) {
                 if (i == 0)
-                    System.out.print("-\t");
-                else System.out.print(i + "\t");
+                    System.out.print("-\t\t");
+                else System.out.print(i + "\t\t");
             }
             System.out.println();
         }
@@ -86,9 +88,6 @@ public class Game2048 {
             }
         }
     }
-
-    //判断用户的指令是否有效，即数组是否真的发生了变化
-    private boolean changed;
 
     //移动
     private void move(int direction) {

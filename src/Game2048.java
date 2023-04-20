@@ -21,7 +21,7 @@ public class Game2048 {
     }
 
     public static void main(String[] args) {
-        new MkTest();
+        new Game2048();
     }
 
     //打印游戏

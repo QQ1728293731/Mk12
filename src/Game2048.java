@@ -33,7 +33,10 @@ public class Game2048 {
             for (int i : row) {
                 if (i == 0)
                     System.out.print("-\t\t");
-                else System.out.print(i + "\t\t");
+                else {
+                    if (i > 1000) System.out.print(i + "\t");
+                    else System.out.print(i + "\t\t");
+                }
             }
             System.out.println();
         }

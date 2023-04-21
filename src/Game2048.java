@@ -32,10 +32,12 @@ public class Game2048 {
         for (int[] row : board) {
             for (int i : row) {
                 if (i == 0)
-                    System.out.print("-\t\t");
+                    System.out.print("-    ");
                 else {
-                    if (i > 1000) System.out.print(i + "\t");
-                    else System.out.print(i + "\t\t");
+                    if (i < 9) System.out.print(i + "    ");
+                    else if (i < 99) System.out.print(i + "   ");
+                    else if (i < 999) System.out.print(i + "  ");
+                    else System.out.print(i + " ");
                 }
             }
             System.out.println();
@@ -210,6 +212,8 @@ public class Game2048 {
         else if (board[3][2] == board[2][2] || board[2][3] == board[2][2])
             return false;
         else if (board[1][0] == board[0][0] || board[0][1] == board[0][0] || board[0][2] == board[0][3] || board[1][3] == board[0][3])
+            return false;
+        else if (board[0][1] == board[0][2] || board[1][0] == board[2][0] || board[3][1] == board[3][2] || board[1][3] == board[2][3])
             return false;
         else
             return board[2][0] != board[3][0] && board[3][1] != board[3][0] && board[2][3] != board[3][3] && board[3][2] != board[3][3];

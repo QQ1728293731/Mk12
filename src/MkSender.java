@@ -7,7 +7,7 @@ public class MkSender {
         DatagramSocket ds = new DatagramSocket();
         String content = "Hello, World!";
         byte[] arr = content.getBytes();
-        InetAddress ia = InetAddress.getByName("10.8.14.50");
+        InetAddress ia = InetAddress.getByName("10.33.135.135");
         DatagramPacket dp = new DatagramPacket(arr, arr.length, ia, 33333);
         ds.send(dp);
         ds.close();

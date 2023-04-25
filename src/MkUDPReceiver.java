@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.*;
 
 //此类使用UDP协议进行数据接收
-public class MkReceiver {
+public class MkUDPReceiver {
     public static void main(String[] args) throws IOException {
         DatagramSocket ds = new DatagramSocket(33333);
         byte[] receiver = new byte[1024];

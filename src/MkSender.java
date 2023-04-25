@@ -7,7 +7,11 @@ public class MkSender {
         DatagramSocket ds = new DatagramSocket();
         String content = "Hello, World!";
         byte[] arr = content.getBytes();
+<<<<<<< Updated upstream
         InetAddress ia = InetAddress.getByName("10.8.29.218");
+=======
+        InetAddress ia = InetAddress.getByName("127.0.0.1");
+>>>>>>> Stashed changes
         DatagramPacket dp = new DatagramPacket(arr, arr.length, ia, 33333);
         ds.send(dp);
         ds.close();

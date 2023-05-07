@@ -47,7 +47,7 @@ public class Game2048 { private final int UP = 1;
         print();
         Scanner sc = new Scanner(System.in);
         String order = "3";
-        while (!order.equals("0")) {
+        while (!order.equals("z")) {
             order = sc.nextLine();
             if (order.equalsIgnoreCase("w")) {
                 act(UP);

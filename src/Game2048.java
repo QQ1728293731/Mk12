@@ -1,8 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game2048 {
-    private final int UP = 1;
+public class Game2048 { private final int UP = 1;
     private final int DOWN = 2;
     private final int LEFT = 3;
     private final int RIGHT = 4;
@@ -48,7 +47,7 @@ public class Game2048 {
         print();
         Scanner sc = new Scanner(System.in);
         String order = "3";
-        while (!order.equals("0")) {
+        while (!order.equals("z")) {
             order = sc.nextLine();
             if (order.equalsIgnoreCase("w")) {
                 act(UP);

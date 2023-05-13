@@ -4,4 +4,9 @@
     <option name="DEFAULT_COMPILER" value="Eclipse" />
     <option name="BUILD_PROCESS_HEAP_SIZE" value="2048" />
   </component>
+  <component name="EclipseCompilerSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Mk12" options="--add-modules java.base" />
+    </option>
+  </component>
 </project>
